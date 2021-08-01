@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pacific Tupe | My Account</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<style type="text/css">
+  .navbar-nav .nav-item .nav-link{
+  color: #000;
+}
+
+.pass_show{position: relative} 
+.pass_show .ptxt{ 
+  position: absolute; 
+  top: 50%; 
+  right: 10px; 
+  z-index: 1; 
+  color: #f36c01; 
+  margin-top: -10px; 
+  cursor: pointer; 
+  color: rgba(0,2,26,1.00);
+  font-size: 2.5vh;
+} 
+}
+
+</style>
+<body>
+ <nav class="navbar navbar-expand-md navbar-white bg-white fixed-top pt-0 pb-0" id="banner">
+    <div class="container-fluid">
+      <!-- Brand -->
+
+      <a class="d-flex align-items-center mt-0 navbar-brand text-color-custom text-dark" href="index.html"><img class="img-fluid responsive-css-2" src="logo.png" alt="Logo" height="30!important" style="padding: 9px; width: 64px;"><span class="logo-text p-2 mt-0">PACIFIC TUPE</span></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse p-0" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto " style="padding: 10px;">
+         <li class="nav-item dropdown mr-lg-3">
+          <a class="nav-link dropdown-toggle cstmborder" href="#" id="navbardrop" data-toggle="dropdown"><img src="flag/united-kingdom.png" class="img-fluid">&nbsp;English</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#"><img src="flag/united-kingdom.png" class="img-fluid">&nbsp;UK</a>
+            <a class="dropdown-item" href="#"><img src="flag/united-states.png" class="img-fluid">&nbsp;US</a>
+            <a class="dropdown-item" href="#"><img src="flag/spain.png" class="img-fluid">&nbsp;SP</a>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+<div class="row p-3">
+  <div class="col-md-12 col-sm-12 px-4 py-3 shadow mx-auto cstmborderrad bg-white">
+    <div class="col-12 mx-auto">
+     <h2 class="text-dark my-3 text-center coustomfont1">Log in to your Pacific Tupe account</h2>
+   </div>
+   <div class="col-12 mx-auto">
+    <h4 class="text-dark text-center coustomfont my-3">Don't have an account?<a href="register.html" class="text-css"> Register</a></h4>
+  </div>
+  <form class="needs-validation" novalidate>
+    <div class="group">      
+      <input type="text" id="TextBox1"  class="TextBox form-control" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>User Id</label>
+    </div>
+
+    <div class="group pass_show"> 
+      <input type="password" id="TextBox2"  class="TextBox form-control" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Password</label>
+    </div>
+
+    <div class="col-md-12 p-0 mb-2">
+      <button class="btn btn btn-block btn-css disable" id="login" style="background:#e8e8e8;">Log in</button>
+
+    </div>
+ 
+    <p class="text-center mt-2"><a href="forgot-password.html" class="text-css" >Forgot your password?</a></p>
+
+  </form>
+</div>
+</div>
+</div>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+
+
+    $(document).ready(function(){
+      $('.TextBox').keydown(function(e){
+       var value1=$('#TextBox1').val();
+       var value2=$('#TextBox2').val();
+       if(value1!="" && value2!=""){
+        $('#linkadd').click();
+        $("#login").css("background","#098481");
+        $("#login").css("color","#fff");
+      }
+    });
+
+      $('.TextBox').keyup(function(e){
+       var value1=$('#TextBox1').val();
+       var value2=$('#TextBox2').val();
+       if(value1=="" && value2==""){
+         $("#login").css("background","#e8e8e8");
+         $("#login").css("color","#000");
+       }
+
+     });
+
+
+  
+
+    });
+
+    $(document).ready(function(){
+      $('.pass_show').append('<span class="ptxt"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>');  
+    });
+
+    $(document).on('click','.pass_show .ptxt', function(){ 
+
+      $(this).html($(this).html() == '<i class="fa fa-eye" aria-hidden="true"></i>' ? '<i class="fa fa-eye-slash" aria-hidden="true"></i>' : '<i class="fa fa-eye" aria-hidden="true"></i>'); 
+
+      $('#TextBox2').attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; }); 
+
+    });
+  </script>
+</body>
+</html>

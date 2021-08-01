@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pacific Tupe | My Account</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<style>
+ .navbar-nav .nav-item .nav-link{
+  color: #000;
+}
+.cstmborder{
+  border: 1px solid black;
+  border-radius:30px;
+  padding: 8px 25px!important;
+}
+.cstmborderrad{
+  border-radius:16px;
+}
+.coustomfont{
+  font-size: 0.8rem;
+}
+.coustomfont1{
+  font-size: 1.2rem;
+}
+.group 			  { 
+  position:relative; 
+  margin-bottom:40px; 
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #000000;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:rgb(0, 0, 0) !important; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.text-css{
+  color: #2db8b5!important;
+  text-align: center!important;
+  font-size: 14px!important;
+  font-weight: 500!important;
+}
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#0632e2;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+ from { background:#000000; }
+ to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+ from { background:#000000; }
+ to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+ from { background:#000000; }
+ to 	{ width:0; background:transparent; }
+}
+
+
+.pass_show{position: relative} 
+.pass_show .ptxt{ 
+  position: absolute; 
+  top: 50%; 
+  right: 10px; 
+  z-index: 1; 
+  color: #f36c01; 
+  margin-top: -10px; 
+  cursor: pointer; 
+  color: rgba(0,2,26,1.00);
+  font-size: 2.5vh;
+} 
+
+/*choice box underline */
+.mdb-select{
+  border: none!important;
+  background-color: transparent!important;
+  color: black!important;
+  user-select: none!important; 
+  border-bottom: 2px solid #dbd9d9!important;
+  outline: none!important;
+  box-shadow: none!important;
+}
+/*choice box underline end*/
+
+.pic{
+  margin-bottom: 1.5rem;
+  background-color: #0a5251;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.txt p{
+  color:white;
+  font: 300 2.25rem/3rem Source Sans Pro;
+}
+
+.txt2 p{
+  color: white;
+  font: 600 1.25rem/1.5rem Source Sans Pro;
+}
+
+.txt3 p{
+  font: 400 1rem/1.5rem Source Sans Pro;
+}
+
+.logo{
+  margin: 0 .75rem;
+  padding: 0;
+}
+@media screen and (max-width: 575px){
+ .tet{
+  display: none!important;
+}
+}
+@media screen and (max-width: 600px){
+  body{
+    background-color:#2db8b5!important;
+  }
+  .tet2{
+    padding: 47px!important;
+  }
+  .pic{
+    margin-bottom: -6px;
+    /* margin-top: -5rem;*/
+  }
+}
+
+@media screen and (max-width: 768px){
+  .tet2{
+    padding: 47px!important;
+  }
+}
+
+
+
+</style>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-white bg-white fixed-top pt-0 pb-0" id="banner">
+    <div class="container-fluid">
+      <!-- Brand -->
+
+      <a class="d-flex align-items-center mt-0 navbar-brand text-color-custom text-dark" href="index.html"><img class="img-fluid responsive-css-2" src="logo.png" alt="Logo" height="30!important" style="padding: 9px; width: 64px;"><span class="logo-text p-2 mt-0">PACIFIC TUPE</span></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse p-0" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto " style="padding: 10px;">
+         <li class="nav-item dropdown mr-lg-3">
+          <a class="nav-link dropdown-toggle cstmborder" href="#" id="navbardrop" data-toggle="dropdown"><img src="flag/united-kingdom.png" class="img-fluid">&nbsp;English</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#"><img src="flag/united-kingdom.png" class="img-fluid">&nbsp;UK</a>
+            <a class="dropdown-item" href="#"><img src="flag/united-states.png" class="img-fluid">&nbsp;US</a>
+            <a class="dropdown-item" href="#"><img src="flag/spain.png" class="img-fluid">&nbsp;SP</a>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container"  style=" margin-top: 6rem;">
+
+  <div class="row m-1">
+
+    <div class="col-lg-7 col-md-6 col-sm-6 d-flex align-items-center justify-content-center tet" >
+      <div>
+        <div class="col-md-12 d-flex align-items-center justify-content-center" style="margin-bottom: 1.5rem;">
+          <div class="txt" style="text-align: center;">
+            <p>Your cash made digital.</p>
+            <p>Pay, send, receive.</p>
+          </div>
+        </div>
+        <div class="col-md-12 pic d-flex mb-3 align-items-center justify-content-center responsive-css-2">
+          <div class="col-md-4">
+            <img src="img/promo-banner-icon.svg" class="img-fluid" alt="glove">
+          </div>
+          <div class="col-md-8 txt2 ">
+            <p>Join millions who already use Skrill to safely pay online and send money anywhere in the world.</p>
+          </div>
+        </div>
+        <div class="col-md-12 tet" style="margin-bottom: 1.5rem;">
+          <div class="txt3 d-flex align-items-center justify-content-center">
+            <p>Pay seamlessly on 15,000 sites</p>
+          </div>
+        </div>
+        <div class="col-md-12 d-flex align-items-center justify-content-center tet">
+          <div class="logo">
+            <img src="img/888.svg" class="img-fluid">
+          </div>
+          <div class="logo">
+            <img src="img/fxpro.svg" class="img-fluid">
+          </div>
+          <div class="logo">
+            <img src="img/steam.svg" class="img-fluid">
+          </div>
+          <div class="logo">
+            <img src="img/milan.svg" class="img-fluid">
+          </div>
+          <div class="logo">
+            <img src="img/skype.svg" class="img-fluid">
+          </div>
+          <div class="logo">
+            <img src="img/steam.svg" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-6 col-sm-6 px-5 py-5 shadow mx-auto cstmborderrad bg-white tet2">
+      <div class="frm">
+        <div class="col-12 mx-auto">
+          <h2 class="text-dark  text-center coustomfont1">Register</h2>
+        </div>
+        <div class="col-12 mx-auto">
+          <h4 class="text-dark text-center coustomfont my-2">Already have an account?<a href="login.html" class="text-css"> Log in</a></h4>
+        </div>
+        <form class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="group">      
+                <input type="text" id="TextBox1" class="TextBox form-control" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>First Name</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="group">      
+                <input type="text" id="TextBox2" class="TextBox form-control" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Last Name</label>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="group">
+                <label style="margin-top: -28px;">Country</label>
+                <select class="mdb-select md-form form-control" required>
+                  <option value=""selected>India</option>
+                  <option value="">Australia</option>
+                  <option value="">Austria</option>
+                </select>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+              </div>
+            </div>
+
+
+
+            <div class="col-md-12">
+              <div class="group">      
+                <input type="text" id="ETextBox" class="TextBox form-control" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Email</label>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="group">      
+                <input type="text" id="ETextBox" class="TextBox form-control" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Phone</label>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="group pass_show"> 
+                <input type="password" id="PTextBox" class="TextBox form-control" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password</label>
+              </div>
+            </div>
+            <div class="col-md-12 p-0">
+              <button class="btn btn btn-block btn-css disable" id="Register" style="background:#e8e8e8;">Register</button>
+
+            </div>
+            <br/>
+
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+<br>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+
+$(document).ready(function(){
+  $('.TextBox').keydown(function(e){
+   var value1=$('#TextBox1').val();
+   var value2=$('#TextBox2').val();
+   var value3=$('#ETextBox').val();
+   var value4=$('#PTextBox').val();
+   if(value1!="" && value2!="" && value3!="" && value4!=""){
+    $('#linkadd').click();
+    $("#Register").css("background","#098481");
+    $("#Register").css("color","#fff");
+  }
+});
+
+  $('.TextBox').keyup(function(e){
+   var value1=$('#TextBox1').val();
+   var value2=$('#TextBox2').val();
+   var value3=$('#ETextBox').val();
+   var value4=$('#PTextBox').val();
+   if(value1=="" && value2=="" && value3!="" && value4!=""){
+     $("#Register").css("background","#e8e8e8");
+     $("#Register").css("color","#000");
+   }
+ });
+
+
+
+
+});
+
+$(document).ready(function(){
+  $('.pass_show').append('<span class="ptxt"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>');  
+});
+
+$(document).on('click','.pass_show .ptxt', function(){ 
+
+  $(this).html($(this).html() == '<i class="fa fa-eye" aria-hidden="true"></i>' ? '<i class="fa fa-eye-slash" aria-hidden="true"></i>' : '<i class="fa fa-eye" aria-hidden="true"></i>'); 
+
+  $('#PTextBox').attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; }); 
+
+});
+</script>
+</body>
+</html>
